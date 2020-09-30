@@ -1,4 +1,7 @@
 <h1>Event creator: <%= link_to @event.creator.name, user_path(@event.creator)%></h1>
+<p>Event Description: <%= @event.description %></p>
+<p>Event Date: <%= @event.date.to_s(:db) %></p>
+<h2>Event Attendees: </h2>
 <ul>
   <% @event.attendees.each do |attendee| %>
     <li>Name: <%= link_to attendee.name.capitalize, user_path(attendee) %>, Email: <%= attendee.email %></li>
