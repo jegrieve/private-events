@@ -5,3 +5,8 @@
 <% @user.created_events.each do |event| %>
     <%= link_to event.description, event_path(event) %><br />
   <% end %>
+
+
+  <% @user.attended_events.where("date > ?", Date.today).each do |event| %>
+  <%= link_to event.description, event_path(event) %>
+<% end %>
