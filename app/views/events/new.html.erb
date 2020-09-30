@@ -1,5 +1,7 @@
 <h1>Create an event: </h1>
 <%= form_with model: @event do |f| %>
   <%= f.text_field :description, placeholder: "Description" %><br><br>
+  <%= f.label :date, "Event's date" %>
+  <%= date_select "event", "date", start_year: 2020 %><br><br>
   <%= f.submit "Create" %>
 <% end %>
